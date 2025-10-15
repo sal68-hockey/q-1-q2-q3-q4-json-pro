@@ -1,0 +1,82 @@
+[
+  {
+    "className": "Environmental sciences",
+    "teacher": "Matthews",
+    "roomNumber": "A233",
+    "period": 1,
+    "subjectArea": "Science",
+    "quarters": ["Q1", "Q2", "Q3", "Q4"]
+  },
+  {
+    "className": "NJIT IS219 Advanced Website Development",
+    "teacher": "Killgore",
+    "roomNumber": "B111",
+    "period": 2,
+    "subjectArea": "Web design/ development",
+    "quarters": ["Q1", "Q2", "Q3", "Q4"]
+  },
+  {
+    "className": "English 4",
+    "teacher": "Murphy",
+    "roomNumber": "E113",
+    "period": 3,
+    "subjectArea": "English",
+    "quarters": ["Q1", "Q2", "Q3", "Q4"]
+  },
+  {
+    "className": "Physical Ed 12",
+    "teacher": "Levi",
+    "roomNumber": "Main gym",
+    "period": 4,
+    "subjectArea": "Gym/PE",
+    "quarters": ["Q1", "Q3", "Q4"]
+  },
+  {
+    "className": "Health 12",
+    "teacher": "Levi",
+    "roomNumber": "C130",
+    "period": 4,
+    "subjectArea": "Health",
+    "quarters": ["Q2"]
+  },
+  {
+    "className": "Lunch",
+    "teacher": "Uh food",
+    "roomNumber": "Eating 101",
+    "period": 6,
+    "subjectArea": "Lunch",
+    "quarters": ["Q1", "Q2", "Q3", "Q4"]
+  },
+  {
+    "className": "Statistics",
+    "teacher": "Altilio",
+    "roomNumber": "A213",
+    "period": 7,
+    "subjectArea": "Math",
+    "quarters": ["Q1", "Q2", "Q3", "Q4"]
+  },
+  {
+    "className": "Lab Marine Science",
+    "teacher": "Tsakiris",
+    "roomNumber": "E221",
+    "period": 8,
+    "subjectArea": "Science",
+    "quarters": ["Q1", "Q2"]
+  },
+  {
+    "className": "Financial Literacy",
+    "teacher": "Morgan",
+    "roomNumber": "A132",
+    "period": 8,
+    "subjectArea": "Finance",
+    "quarters": ["Q3", "Q4"]
+  },
+  {
+    "className": "Popular Music",
+    "teacher": "Ippolito",
+    "roomNumber": "C103",
+    "period": 9,
+    "subjectArea": "Music",
+    "quarters": ["Q1", "Q2", "Q3", "Q4"]
+  }
+]
