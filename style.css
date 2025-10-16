@@ -1,95 +1,33 @@
+:root{
+  --accent: #0d6efd;
+  --card-bg: #f8f9fa;
+}
 
 body {
-  background-color: #f8f9fa;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(180deg,#f3f6ff, #ffffff);
+  min-height: 100vh;
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
 }
 
-
-h1 {
-  font-weight: 700;
-  color: #343a40;
+.header-card {
+  background: linear-gradient(90deg, rgba(13,110,253,0.08), rgba(13,110,253,0.02));
+  border-left: 6px solid var(--accent);
 }
 
-
-.card {
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  border: 1px solid #dee2e6;
-  border-radius: 8px;
+.card-schedule {
+  transition: transform .28s ease, box-shadow .28s ease, opacity .2s ease;
 }
 
-.card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+.card-schedule.animate-in {
+  transform: translateY(-6px);
+  box-shadow: 0 8px 20px rgba(13,110,253,.08);
 }
 
-
-.card-title {
-  font-size: 1.25rem;
-  font-weight: 600;
-  color: #007bff;
+.code {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, "Roboto Mono", monospace;
 }
 
-.card-body p {
-  margin-bottom: 0.4rem;
-}
-
-
-#status .alert {
-  margin-bottom: 20px;
-  text-align: center;
-}
-
-
-.modal {
-  display: none;
-  position: fixed;
-  z-index: 1050;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  overflow: auto;
-  background-color: rgba(0, 0, 0, 0.4);
-}
-
-.modal-dialog {
-  margin: 10% auto;
-  max-width: 400px;
-}
-
-.modal-content {
-  background-color: #fff;
-  border-radius: 8px;
-  padding: 20px;
-}
-.modal-header {
-  border-bottom: none;
-  padding-bottom: 0;
-}
-#filterBtn {
-  transition: background-color 0.3s ease;
-}
-
-#filterBtn:hover {
-  background-color: #6c757d;
-}
-
-select.form-select {
-  font-size: 0.95rem;
-}
-
-@media (max-width: 768px) {
-  .card-title {
-    font-size: 1.1rem;
-  }
-
-  .card-body p {
-    font-size: 0.9rem;
-  }
-}
-@media (max-width: 576px) {
-  .modal-dialog {
-    width: 90%;
-    margin: 20% auto;
-  }
+/* responsive improvements */
+@media (max-width: 576px){
+  .header-card h1 { font-size: 1.2rem; }
 }

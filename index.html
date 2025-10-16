@@ -1,22 +1,101 @@
-<div id="filterModal" class="modal" tabindex="-1" style="display:none; background:rgba(0,0,0,0.5);">
-  <div class="modal-dialog">
-    <div class="modal-content p-3 position-relative">
-      <button type="button" class="btn-close position-absolute top-0 end-0 m-2" aria-label="Close" id="closeModalBtn"></button>
-      <h5>Sort / Filter</h5>
-      <select id="sortOption" class="form-select mb-2">
-        <option value="">-- Sort By --</option>
-        <option value="alphabetical">Alphabetical</option>
-        <option value="periodAsc">Period (Low to High)</option>
-        <option value="periodDesc">Period (High to Low)</option>
-      </select>
-      <select id="quarterOption" class="form-select mb-2">
-        <option value="">-- Filter by Quarter --</option>
-        <option value="Q1">Q1</option>
-        <option value="Q2">Q2</option>
-        <option value="Q3">Q3</option>
-        <option value="Q4">Q4</option>
-      </select>
-      <button class="btn btn-primary" onclick="applyFilters()">Apply</button>
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <title> <a href=""></a> Sals Schedule Project </title>
+
+  <!-- Bootstrap 5 -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Custom styles -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <nav class="navbar navbar-dark bg-dark">
+    <div class="container-fluid">
+      <span class="navbar-brand mb-0 h1">Schedule Viewer</span>
+      <div class="text-white small">Press <kbd>1</kbd>–<kbd>4</kbd> to switch schedules •</div>
+    </div>
+  </nav>
+
+  <main class="container py-4">
+    <header id="pageHeader" class="mb-3 p-3 rounded header-card" title="Double-click to cycle schedules">
+      <h1>Class Schedules — Async JSON</h1>
+      <p class="lead">This page loads schedules from JSON files in <code>/json/</code>. Use keys <strong>1–4</strong> or double-click this header to change schedules. Use the filter to view quarters or sort results.</p>
+
+      <!-- event-driven trigger example (select) - allowed but not 'simple button' -->
+      <div class="row g-2 align-items-center">
+        <div class="col-auto">
+          <label for="friendSelect" class="form-label">Choose schedule (select):</label>
+        </div>
+        <div class="col-auto">
+          <select id="friendSelect" class="form-select">
+            <option value="MySchedule.json">Mine (MySchedule)</option>
+            <option value="FriendA.json">Friend A</option>
+            <option value="FriendB.json">Friend B</option>
+            <option value="FriendC.json">Friend C</option>
+          </select>
+        </div>
+        <div class="col-auto ms-auto">
+          <button id="filterBtn" class="btn btn-outline-primary" data-bs-toggle="modal" data-bs-target="#filterModal">Filter / Sort</button>
+        </div>
+      </div>
+    </header>
+
+    <div id="status"></div>
+
+    <section id="scheduleContainer" class="row row-cols-1 row-cols-md-2 g-3">
+      <!-- schedule cards inserted here -->
+    </section>
+  </main>
+
+  <!-- Filter / Sort Modal -->
+  <div class="modal fade" id="filterModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Filter & Sort</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <div class="mb-3">
+            <label class="form-label">Show quarter:</label>
+            <select id="quarterSelect" class="form-select">
+              <option value="all">All quarters</option>
+              <option value="Q1">Q1</option>
+              <option value="Q2">Q2</option>
+              <option value="Q3">Q3</option>
+              <option value="Q4">Q4</option>
+            </select>
+          </div>
+
+          <div class="mb-3">
+            <label class="form-label">Sort by:</label>
+            <select id="sortSelect" class="form-select">
+              <option value="period-asc">Period (low → high)</option>
+              <option value="period-desc">Period (high → low)</option>
+              <option value="alpha-asc">Alphabetical (A → Z)</option>
+              <option value="alpha-desc">Alphabetical (Z → A)</option>
+            </select>
+          </div>
+
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" id="animateSwitch" checked>
+            <label class="form-check-label" for="animateSwitch">Animate cards on switch</label>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button id="applyFilter" type="button" class="btn btn-primary" data-bs-dismiss="modal">Apply</button>
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        </div>
+      </div>
     </div>
   </div>
-</div>
+
+  <!-- Bootstrap bundle JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+  <script src="script.js"></script>
+</body>
+</html>

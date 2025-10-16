@@ -5,23 +5,23 @@
     "roomNumber": "E123",
     "period": 1,
     "subjectArea": "English",
-    "quarters": ["Q1", "Q2", "Q3", "Q4"]
+    "quarters": ["Q1","Q2","Q3","Q4"]
   },
   {
     "className": "NJIT IS219 Advanced Website Development",
-    "teacher": "Killgore",
+    "teacher": "Kilgore",
     "roomNumber": "B111",
     "period": 2,
     "subjectArea": "Web design/ development",
-    "quarters": ["Q1", "Q2", "Q3", "Q4"]
+    "quarters": ["Q1","Q2","Q3","Q4"]
   },
   {
     "className": "Health 12",
     "teacher": "Scalzo",
     "roomNumber": "C130",
     "period": 3,
-    "subjectArea": "English",
-    "quarters": ["Q1", "Q2", "Q3", "Q4"]
+    "subjectArea": "Health",
+    "quarters": ["Q1","Q2","Q3","Q4"]
   },
   {
     "className": "Forensics",
@@ -29,15 +29,15 @@
     "roomNumber": "D201",
     "period": 4,
     "subjectArea": "Science",
-    "quarters": ["Q1", "Q2"]
+    "quarters": ["Q1","Q2"]
   },
   {
     "className": "Lunch",
     "teacher": "Farcnesco",
     "roomNumber": "Caf",
     "period": 0,
-    "subjectArea": "none",
-    "quarters": ["Q1", "Q2", "Q3", "Q4"]
+    "subjectArea": "None",
+    "quarters": ["Q1","Q2","Q3","Q4"]
   },
   {
     "className": "Video Editing",
@@ -45,7 +45,7 @@
     "roomNumber": "B106",
     "period": 5,
     "subjectArea": "Technology",
-    "quarters": ["Q1", "Q2", "Q3", "Q4"]
+    "quarters": ["Q1","Q2","Q3","Q4"]
   },
   {
     "className": "Global Studies",
@@ -53,14 +53,14 @@
     "roomNumber": "A109",
     "period": 6,
     "subjectArea": "History",
-    "quarters": ["Q1", "Q2", "Q3", "Q4"]
+    "quarters": ["Q1","Q2","Q3","Q4"]
   },
   {
     "className": "Financial Literacy",
     "teacher": "Morgan",
     "roomNumber": "A123",
     "period": 7,
-    "subjectArea": "Buisness",
-    "quarters": ["Q1", "Q2"]
+    "subjectArea": "Business",
+    "quarters": ["Q1","Q2"]
   }
 ]

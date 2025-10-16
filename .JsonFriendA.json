@@ -1,0 +1,74 @@
+[
+  {
+    "className": "Physical Ed 12",
+    "teacher": "Sininsky, Derek",
+    "roomNumber": "GYM",
+    "period": 1,
+    "subjectArea": "Physical Education",
+    "quarters": ["Q4"]
+  },
+  {
+    "className": "Honors NJIT IS219 Advanced Website Development WDP",
+    "teacher": "Kilgore, Gregory",
+    "roomNumber": "B111",
+    "period": 2,
+    "subjectArea": "Computer Science",
+    "quarters": ["FY"]
+  },
+  {
+    "className": "AP Statistics",
+    "teacher": "Reich, Tara",
+    "roomNumber": "E213",
+    "period": 3,
+    "subjectArea": "Mathematics",
+    "quarters": ["FY"]
+  },
+  {
+    "className": "Precalculus",
+    "teacher": "Ploe, Christopher",
+    "roomNumber": "E215",
+    "period": 4,
+    "subjectArea": "Mathematics",
+    "quarters": ["FY"]
+  },
+  {
+    "className": "English 4",
+    "teacher": "Murphy, Matthew",
+    "roomNumber": "E113",
+    "period": 5,
+    "subjectArea": "English",
+    "quarters": ["FY"]
+  },
+  {
+    "className": "Financial Literacy",
+    "teacher": "Morgan, Kevin",
+    "roomNumber": "A132",
+    "period": 6,
+    "subjectArea": "Business / Economics",
+    "quarters": ["S1"]
+  },
+  {
+    "className": "Criminology and Law",
+    "teacher": "Quinn, Victoria",
+    "roomNumber": "A107",
+    "period": 6,
+    "subjectArea": "Social Studies",
+    "quarters": ["S2"]
+  },
+  {
+    "className": "Popular Music 1",
+    "teacher": "Ippolito, Michael",
+    "roomNumber": "C103",
+    "period": 7,
+    "subjectArea": "Music",
+    "quarters": ["S1"]
+  },
+  {
+    "className": "Popular Music 2",
+    "teacher": "Ippolito, Michael",
+    "roomNumber": "C103",
+    "period": 7,
+    "subjectArea": "Music",
+    "quarters": ["S2"]
+  }
+]

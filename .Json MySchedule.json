@@ -1,11 +1,11 @@
 [
   {
-    "className": "Environmental sciences",
+    "className": "Environmental Sciences",
     "teacher": "Matthews",
     "roomNumber": "A233",
     "period": 1,
     "subjectArea": "Science",
-    "quarters": ["Q1", "Q2", "Q3", "Q4"]
+    "quarters": ["Q1","Q2","Q3","Q4"]
   },
   {
     "className": "NJIT IS219 Advanced Website Development",
@@ -13,7 +13,7 @@
     "roomNumber": "B111",
     "period": 2,
     "subjectArea": "Web design/ development",
-    "quarters": ["Q1", "Q2", "Q3", "Q4"]
+    "quarters": ["Q1","Q2","Q3","Q4"]
   },
   {
     "className": "English 4",
@@ -21,47 +21,47 @@
     "roomNumber": "E113",
     "period": 3,
     "subjectArea": "English",
-    "quarters": ["Q1", "Q2", "Q3", "Q4"]
+    "quarters": ["Q1","Q2","Q3","Q4"]
   },
   {
     "className": "Physical Ed 12",
     "teacher": "Levi",
-    "roomNumber": "Main gym",
+    "roomNumber": "Main Gym",
     "period": 4,
-    "subjectArea": "Gym/PE",
-    "quarters": ["Q1", "Q3", "Q4"]
+    "subjectArea": "PE",
+    "quarters": ["Q1","Q3","Q4"]
   },
   {
     "className": "Health 12",
     "teacher": "Levi",
     "roomNumber": "C130",
-    "period": 4,
+    "period": 5,
     "subjectArea": "Health",
     "quarters": ["Q2"]
   },
   {
     "className": "Lunch",
-    "teacher": "Uh food",
-    "roomNumber": "Eating 101",
-    "period": 6,
-    "subjectArea": "Lunch",
-    "quarters": ["Q1", "Q2", "Q3", "Q4"]
+    "teacher": "Uh",
+    "roomNumber": "Caf",
+    "period": 0,
+    "subjectArea": "Eating 101",
+    "quarters": ["Q1","Q2","Q3","Q4"]
   },
   {
-    "className": "Statistics",
+    "className": "AP Statistics",
     "teacher": "Altilio",
     "roomNumber": "A213",
-    "period": 7,
+    "period": 6,
     "subjectArea": "Math",
-    "quarters": ["Q1", "Q2", "Q3", "Q4"]
+    "quarters": ["Q1","Q2","Q3","Q4"]
   },
   {
     "className": "Lab Marine Science",
     "teacher": "Tsakiris",
     "roomNumber": "E221",
-    "period": 8,
+    "period": 7,
     "subjectArea": "Science",
-    "quarters": ["Q1", "Q2"]
+    "quarters": ["Q1","Q2"]
   },
   {
     "className": "Financial Literacy",
@@ -69,7 +69,7 @@
     "roomNumber": "A132",
     "period": 8,
     "subjectArea": "Finance",
-    "quarters": ["Q3", "Q4"]
+    "quarters": ["Q3","Q4"]
   },
   {
     "className": "Popular Music",
@@ -77,6 +77,6 @@
     "roomNumber": "C103",
     "period": 9,
     "subjectArea": "Music",
-    "quarters": ["Q1", "Q2", "Q3", "Q4"]
+    "quarters": ["Q1","Q2","Q3","Q4"]
   }
 ]
