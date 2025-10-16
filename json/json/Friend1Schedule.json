@@ -1,4 +1,6 @@
 {
+  "schedule": [
+    {
       "className": "Physical Ed 12",
       "teacher": "Sininsky, Derek",
       "roomNumber": "GYM",

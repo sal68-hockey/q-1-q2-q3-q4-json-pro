@@ -15,7 +15,7 @@ document.addEventListener("DOMContentLoaded", () => {
   loadSchedule(scheduleFiles[0].file);
 });
 
-// Handle keyboard switch (1-4)
+
 document.addEventListener("keydown", (e) => {
   if (["1", "2", "3", "4"].includes(e.key)) {
     const index = parseInt(e.key) - 1;
@@ -27,10 +27,10 @@ document.addEventListener("keydown", (e) => {
   }
 });
 
-// Load schedule data
+
 async function loadSchedule(fileName) {
-  status.innerHTML = `<div class="alert alert-info">Loading schedule...</div>`;
-  container.innerHTML = "";
+status.innerHTML = `<div class="alert alert-info">Loading schedule...</div>`;
+container.innerHTML = "";
 
   try {
     const response = await fetch(`./json/${fileName}`);
@@ -45,7 +45,7 @@ async function loadSchedule(fileName) {
   }
 }
 
-// Display cards
+
 function displaySchedule(data) {
   container.innerHTML = "";
   data.forEach((cls) => {
@@ -66,7 +66,6 @@ function displaySchedule(data) {
   });
 }
 
-// Filter / Sort Options
 document.getElementById("filterBtn").addEventListener("click", () => {
   document.getElementById("filterModal").style.display = "block";
 });
@@ -76,12 +75,12 @@ function applyFilters() {
   const sortOption = document.getElementById("sortOption").value;
   const quarter = document.getElementById("quarterOption").value;
 
-  // Filter by quarter
+
   if (quarter) {
     filtered = filtered.filter(cls => cls.quarters.includes(quarter));
   }
 
-  // Sort logic
+
   if (sortOption === "alphabetical") {
     filtered.sort((a, b) => a.className.localeCompare(b.className));
   } else if (sortOption === "period") {
@@ -96,4 +95,9 @@ function applyFilters() {
     for (let i = filtered.length - 1; i > 0; i--) {
       const j = Math.floor(Math.random() * (i + 1));
       [filtered[i], filtered[j]] = [filtered[j], filtered[i]];
-    }           
+        }           
+      }
+    
+    
+      displaySchedule(filtered);
+    }
