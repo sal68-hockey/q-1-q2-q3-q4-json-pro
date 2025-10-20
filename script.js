@@ -5,66 +5,64 @@ const scheduleFiles = [
   "FriendC.json"
 ];
 
-// DOM references
 const status = document.getElementById('status');
 const container = document.getElementById('scheduleContainer');
 const header = document.getElementById('pageHeader');
 const friendSelect = document.getElementById('friendSelect');
 
-// filter/sort controls
+
 const quarterSelect = document.getElementById('quarterSelect');
 const sortSelect = document.getElementById('sortSelect');
 const animateSwitch = document.getElementById('animateSwitch');
 const applyFilterBtn = document.getElementById('applyFilter');
 
-let currentIndex = 0; // index into scheduleFiles
-let currentData = []; // currently loaded JSON array
+let currentIndex = 0;
+let currentData = []; 
 
-// Utility: show status message (info / error)
+
 function showStatus(html, isError=false) {
   status.innerHTML = html;
   if(isError) status.querySelectorAll('.alert').forEach(a => a.classList.add('alert-danger'));
 }
 
-// Async function to fetch a file by name (uses template literal in path)
-// Comments: fileName param is used in the template literal for fetch.
+
 async function loadSchedule(fileName) {
-  // Show loading message
+
   status.innerHTML = `<div class="alert alert-info">Loading schedule from <code>${fileName}</code>...</div>`;
   container.innerHTML = "";
 
   try {
-    // fetch path uses template literal as required: fetch(`./json/${fileName}`)
+  
     const response = await fetch(`./json/${fileName}`);
     if (!response.ok) {
       throw new Error(`HTTP ${response.status} - ${response.statusText}`);
     }
     const data = await response.json();
 
-    // Ensure data is an array
+   
     if (!Array.isArray(data)) {
       throw new Error('JSON format invalid: expected an array of class objects.');
     }
 
-    // Save and render (default sorted by period)
+  
     currentData = data;
     renderSchedule(currentData);
     status.innerHTML = `<div class="alert alert-success">Loaded <strong>${fileName}</strong>.</div>`;
   } catch (err) {
-    // Friendly error message shown to user
+
     showStatus(`<div class="alert alert-warning">Could not load <code>${fileName}</code>. Error: ${err.message}</div>`, true);
   }
 }
 
-// Rendering: accepts an array of class objects, applies filter/sort, and builds cards
+
 function renderSchedule(data) {
   container.innerHTML = "";
 
-  // Apply quarter filter
+
   const quarter = quarterSelect ? quarterSelect.value : 'all';
   let filtered = data.filter(item => {
     if (!item.quarters || quarter === 'all') return true;
-    // Some JSON uses string or array; unify:
+  
     if (Array.isArray(item.quarters)) {
       return item.quarters.includes(quarter);
     } else if (typeof item.quarters === 'string') {
@@ -85,7 +83,7 @@ function renderSchedule(data) {
     filtered.sort((a,b) => b.className.localeCompare(a.className));
   }
 
-  // Build cards one at a time using insertAdjacentHTML('beforeend', html)
+  
   filtered.forEach((cls, idx) => {
     const html = `
       <article class="col">
@@ -103,18 +101,18 @@ function renderSchedule(data) {
     `;
     container.insertAdjacentHTML('beforeend', html);
 
-    // optional animate
+  
     if (animateSwitch && animateSwitch.checked) {
-      // add animation class to the newly inserted card
+   
       const cards = container.querySelectorAll('.card-schedule');
       const card = cards[cards.length - 1];
-      // small timeout so transition can take effect
+  
       setTimeout(() => card.classList.add('animate-in'), 20);
       setTimeout(() => card.classList.remove('animate-in'), 900);
     }
   });
 
-  // If nothing after filtering, show message
+
   if (filtered.length === 0) {
     container.insertAdjacentHTML('beforeend', `
       <div class="col-12">
@@ -124,11 +122,11 @@ function renderSchedule(data) {
   }
 }
 
-/* --- Event-driven switching (no simple button clicks) --- */
 
-// Keydown switching: 1 → scheduleFiles[0], 2 → [1], etc.
+
+
 window.addEventListener('keydown', (e) => {
-  // Accept numeric keys 1..4 (also Numpad 1..4)
+ 
   const map = { '1':0, '2':1, '3':2, '4':3 };
   if (map.hasOwnProperty(e.key)) {
     currentIndex = map[e.key];
@@ -137,14 +135,14 @@ window.addEventListener('keydown', (e) => {
   }
 });
 
-// Double-click header cycles schedules
+
 header.addEventListener('dblclick', () => {
   currentIndex = (currentIndex + 1) % scheduleFiles.length;
   friendSelect.value = scheduleFiles[currentIndex];
   loadSchedule(scheduleFiles[currentIndex]);
 });
 
-// Select change (another non-button event) also loads schedule
+
 friendSelect.addEventListener('change', (e) => {
   const fname = e.target.value;
   currentIndex = scheduleFiles.indexOf(fname);
@@ -152,15 +150,15 @@ friendSelect.addEventListener('change', (e) => {
   loadSchedule(fname);
 });
 
-// Apply filter button (in modal) click applies settings and re-renders
+
 applyFilterBtn.addEventListener('click', () => {
-  // Re-render using currentData and current filter choices
+
   if (currentData && currentData.length) {
     renderSchedule(currentData);
   }
 });
 
-/* Helper to escape HTML inserted into cards to avoid injection issues */
+
 function escapeHtml(unsafe) {
   if (unsafe === null || unsafe === undefined) return "";
   return String(unsafe)
@@ -171,9 +169,8 @@ function escapeHtml(unsafe) {
     .replaceAll("'", '&#039;');
 }
 
-/* Auto-load the first schedule on page open */
 document.addEventListener('DOMContentLoaded', () => {
-  // set select to the first element
+ 
   friendSelect.value = scheduleFiles[currentIndex];
   loadSchedule(scheduleFiles[currentIndex]);
 });
