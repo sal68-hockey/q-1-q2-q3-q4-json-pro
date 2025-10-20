@@ -19,7 +19,7 @@ const applyFilterBtn = document.getElementById('applyFilter');
 let currentIndex = 0;
 let currentData = []; 
 
-
+ // Function to show status messages from deiffernt parts of the code website 
 function showStatus(html, isError=false) {
   status.innerHTML = html;
   if(isError) status.querySelectorAll('.alert').forEach(a => a.classList.add('alert-danger'));
@@ -71,7 +71,7 @@ function renderSchedule(data) {
     return true;
   });
 
-  // Sorting
+  // Sorting 
   const sortMode = sortSelect ? sortSelect.value : 'period-asc';
   if (sortMode === 'period-asc') {
     filtered.sort((a,b) => Number(a.period) - Number(b.period));
@@ -83,7 +83,7 @@ function renderSchedule(data) {
     filtered.sort((a,b) => b.className.localeCompare(a.className));
   }
 
-  
+  // Render each class and sorts by period ,teacher name, class room number, subject area
   filtered.forEach((cls, idx) => {
     const html = `
       <article class="col">
@@ -101,7 +101,7 @@ function renderSchedule(data) {
     `;
     container.insertAdjacentHTML('beforeend', html);
 
-  
+  // Animation switch on and off 
     if (animateSwitch && animateSwitch.checked) {
    
       const cards = container.querySelectorAll('.card-schedule');
@@ -122,7 +122,7 @@ function renderSchedule(data) {
   }
 }
 
-
+// Event listeners from differnt website parts
 
 
 window.addEventListener('keydown', (e) => {
@@ -130,7 +130,7 @@ window.addEventListener('keydown', (e) => {
   const map = { '1':0, '2':1, '3':2, '4':3 };
   if (map.hasOwnProperty(e.key)) {
     currentIndex = map[e.key];
-    friendSelect.value = scheduleFiles[currentIndex]; // keep select in sync
+    friendSelect.value = scheduleFiles[currentIndex]; 
     loadSchedule(scheduleFiles[currentIndex]);
   }
 });
